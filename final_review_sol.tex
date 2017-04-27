@@ -1,0 +1,168 @@
+%\begin{document}
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ...
+\usepackage{enumerate}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{epstopdf}
+\usepackage[printwatermark]{xwatermark}
+\usepackage{tikz}
+
+\providecommand{\sol}{\noindent \textbf{Solution: }}
+\providecommand{\points}[1]{\textcolor[rgb]{1, 1, 1}{.}\hfill{\textbf{[#1 points]} } \\ }
+\providecommand{\grader}[1]{\noindent \textcolor[rgb]{0.5, 0, 0}{\emph{Note to grader:}} #1}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Final review sol.}
+%\author{Jeff Lai}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[Q 1.]
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+\item 	
+\sol
+Let $x_{i,j}$ be the $i$th observation resulting from the $j$th group. 
+Let the population means of Freshman, Sophomore, Junior classes' studying hours be $\mu_1$, $\mu_2$, and $\mu_3$. $n_1=6$, $n_2=6$, and $n_3=7$.\\
+
+\begin{itemize}
+    \item Hypothesis\\
+    $H_0: \mu_1=\mu_2=\mu_3$\\
+    $H_A:$ At least one population mean is different.\\
+    \item Test Statistics\\
+    Test statistics: $V.R=\frac{MSA}{MSW}$\\
+    \item Rejection Region\\
+    $ V.R> F_{1-\alpha,2,16}=3.63$\\
+    \item Calculate the statistics\\
+    \[SSW=\sum_{j=1}^3\sum_{i=1}^{n_j}(x_{ij}-\bar{x}_{.j})^2=10.6369\]
+    \[SSA=\sum_{j=1}^3 n_j(\bar{x}_{.j}-\bar{x}_{..})^2=30.0210\]
+    \[MSA=\frac{SSA}{k-1}=\frac{30.0210}{2}=15.0105\]
+    \[MSW=\frac{SSW}{N-k}=\frac{10.6369}{16}=0.6648\]
+    \[V.R=\frac{15.0105}{0.6648}=22.5787\]
+    \item Make Decision \\
+    Our computed $V.R= 22.5787$ is greater than $F_{1-\alpha,2,16}=3.63$, so we reject $H_0$.    
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 2 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+\sol This is a two-tailed hypothesis test.
+
+$$V.R. = \frac{S_s^2}{S_w^2} = \frac{64}{16} = 4.$$
+
+The F distribution is not symmetric, so we will need to find $F_{1-\frac{\alpha}{2},n_1-1,n_2-1}$ 
+and $F_{\frac{\alpha}{2},n_1-1,n_2-1}$
+
+$$F_{1-\frac{\alpha}{2},n_1-1,n_2-1}=F_{0.95, 12, 15}=2.48.$$
+$$F_{\frac{\alpha}{2},n_1-1,n_2-1}=\frac{1}{F_{1-\frac{\alpha}{2},n_2-1,n1-1}}=\frac{1}{F_{0.95, 15, 12}}=\frac{1}{2.62} = 0.3817.$$
+
+The rejection region is $\left[0, 0.3817\right] \cup \left[2.48, \infty\right)$. 
+Since $V.R.=4$ is outside the rejection region, we \emph{fail to reject} H$_0$.
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 3 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item 
+\sol This is a one-tailed hypothesis test.
+
+We assume the $H_0$ to be true, thus we put $p_b - p_p=(p_b - p_p)_0=0$ in the test statistic.
+Moreover, we must find a common value $\bar{p}$ for the denominator
+$$\bar{p} = \frac{28+43}{180+175} = 0.20. $$
+
+$$T.S._{obs} = \frac{(\hat{p}_b-\hat{p}_p)-(p_b - p_p)_0}{\sqrt{\frac{\bar{p}  (1 - \bar{p})}{n_b}+\frac{\bar{p}  (1 - \bar{p})}{n_p}}} = \frac{(0.2389-0.16)-(0)}{\sqrt{\frac{0.20 \times 0.80}{180} +\frac{0.20 \times 0.80}{175}}} = 1.858 \approx 1.86.$$
+
+Our $p$-value $= 1 - \Phi(z_{obs}) = 1 - \Phi(1.86) = 1 - 0.9686 = 0.0314$. \\Since this value is less than $\alpha = 0.05$, we \emph{reject} H$_0$.\\
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 4 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+\sol This is a one-tailed hypothesis test.
+
+$$ T.S. = \frac{(n-1) S^2}{\sigma^2_0}$$
+$$\chi_{obs}^2= \frac{(n-1)  s^2}{\sigma^2_0} = \frac{29 \times (0.09)}{0.14} = 18.64.$$
+
+Find the value for $\chi_{n-1,\alpha}^2$ = $\chi_{29, 0.05}^2 = 17.708.$
+Because $18.64 > 17.708$, it is not in the rejection region, and we \emph{fail to reject} H$_0$.
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 5 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+	
+\sol This is a two-tailed hypothesis test.
+
+$$z_{obs} = \frac{\bar{x}-\mu_0}{\frac{\sigma}{\sqrt{n}}} = \frac{69.2 - 68}{\frac{3.6}{\sqrt{36}}} = \frac{1.2}{\frac{3.6}{6}} = \frac{1.2}{0.6} = 2.0.$$
+
+Our $p$-value $= 2 \times (1 - \Phi(z_{obs})) = 2 \times (1 - \Phi(2.0)) = 2 \times (1 - 0.9772) = 2 \times 0.0228 = 0.0456$. Since this value is greater than $\alpha = 0.01$, we \emph{fail to reject} H$_0$.
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 6 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item 
+	
+\sol This is a two-tailed hypothesis test. Since we do not know the variances but they are equal, we use a $t$-distribution, and need $s_p^2$:
+
+$$ s_p^2 = \frac{(n_A - 1)(s_A^2)+ (n_B -1)(s_B^2)}{n_A+n_B-2} = \frac{194.75}{25} \approx 7.79.$$
+
+Also note that $t_{1-\frac{\alpha}{2},n_A+n_B-2} = t_{.99,25} = 2.485$, so $t_{.01,25} = -2.485$. 
+Since, we assume the null hypothesis to be true, $\mu_A - \mu_B=0$,  
+$$t_{obs} = \frac{(\bar{x}_A-\bar{x}_B)-(\mu_A - \mu_B)_0}{\sqrt{\frac{s_p^2}{n_A}+\frac{s_p^2}{n_B}}} = \frac{-4 - 0}{\sqrt{\frac{7.79}{15}+\frac{7.79}{12}}} = \frac{-4}{1.0810} \approx -3.67.$$
+
+Since this observed $t$-value is in the rejection region, and we \emph{reject} H$_0$.
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 7 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+
+\sol The confidence interval of the ratio of two population variances $\frac{\sigma_1^2}{\sigma_2^2}$ is
+	
+$\left(\frac{s_1^2/s_2^2}{F_{1-\frac{\alpha}{2},n_1-1,n_2-2}},\frac{s_1^2/s_2^2}{F_{\frac{\alpha}{2},n_1-1,n_2-2}}\right)$ where $n_1=20, n_2=15$ and $s_1^2=100$, $s_2^2=120$.\\
+	
+
+For the 95\% confidence interval, $\alpha$ is 0.05.
+		
+Since $F_{1-\frac{\alpha}{2},n_1-1,n_2-1}=F_{0.975,19,14}=2.86$,
+		
+and $F_{\frac{\alpha}{2},n_1-1,n_2-1}=\frac{1}{F_{1-\frac{\alpha}{2},n_2-1,n1-1}}=\frac{1}{F_{0.975,14,19}}=\frac{1}{2.65}$, the confidence interval of the ratio of two population variances is
+		
+$\left(\frac{100/120}{2.86},\frac{100/120}{1/2.65}\right)=\left(0.2914, 2.2083\right)$;\\
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 8 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item 
+	\sol
+	\begin{enumerate}[(a)]
+	\item $\alpha \geq 0.001$.
+	\item $\alpha < 0.001$.	
+	\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 9 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item 
+\sol Yes. The sample mean of any underlying population distribution for size $n > 30$ is normally distributed with mean $\mu$ and variance $\frac{\sigma^2}{n}$ by the central limit theorem.
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 10 %%%%%%%%%%%%%%%%%%%%%%%%
+\item 
+\sol No. The population is not normally distributed, and the sample is too small to apply the central limit 
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 11 %%%%%%%%%%%%%%%%%%%%%%%%
+\item 
+\sol The $100(1-\alpha)\%$ confidence interval of the difference of population means is given by $$\left(\bar{x}_1 - \bar{x}_2 - t_{1 - \frac{\alpha}{2},n_1 + n_2 - 2} \times \sqrt{\frac{s_p^2}{n_1} + \frac{s_p^2}{n_2}},\bar{x}_1 - \bar{x}_2 + t_{1 - \frac{\alpha}{2},n_1 + n_2 - 2} \times \sqrt{\frac{s_p^2}{n_1} + \frac{s_p^2}{n_2}}\right)$$ where $$s_p = \sqrt{\frac{(n_1 - 1)s_1^2+(n_2 - 1)s_2^2}{n_1 + n_2 - 2}}.$$\\
+Note that in this problem, students should realize $s_p = s_1 = s_2 = 0.5$.
+The degrees of freedom $ df= n_1+n_2-2=16+25-2=39$. We do not have the table for $df=39$, thus we use values for $df=40$. 
+	\begin{enumerate}
+	\item $CI_{95} = (6 - 5.5 - 2.0211 \times 0.16, 6 - 5.5 + 2.0211 \times 0.16) = (0.1766,0.8234)$.
+	\item $CI_{90} = (6 - 5.5 - 1.6839 \times 0.16, 6 - 5.5 + 1.6839 \times 0.16) = (0.2306,0.7694)$.
+	\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 12 %%%%%%%%%%%%%%%%%%%%%%%%
+\item 
+\sol\\
+Here, $n=20, p=0.25$, thus $\mu=np=5$, and $\sigma^2=np(1-p)=20\times 0.25 \times 0.75=3.75.$
+The continuity correction factor requires us to use 7.5 in order to include 8 since the inequality is weak and we want the region to the right.
+\begin{align*}
+P(X\geq 8) &\approx P\left(Z\geq \frac{7.5-\mu}{\sigma}\right) =P\left(Z\geq \frac{7.5-5}{\sqrt{3.75}}\right) \\
+&=P(Z\geq 1.29)\\
+&=1-P(Z\leq 1.29)\\
+&=1-0.9015\\
+&=0.0985.
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 13 %%%%%%%%%%%%%%%%%%%%%%%%
+\item 
+\sol
+\begin{enumerate}[(a)]
+\item $\mu_{\hat{p}} = 0.30$
+\item $\sigma_{\hat{p}} = \sqrt{\frac{0.30\times 0.70}{50}} = 0.0648$
+\item 
+\begin{align*}
+P(\, \hat{p} \geq 0.4) &= P\left(Z \geq \frac{0.4-0.3}{0.0648}\right) \\
+&= P(Z \geq 1.5432)\\&=1-P(Z \leq 1.5432) \\
+&= 1-0.9382\\&=0.0168.
+\end{align*}
+\end{enumerate}
+
+\end{enumerate} 
+\end{document}

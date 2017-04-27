@@ -1,0 +1,133 @@
+%\begin{document}
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ...
+\usepackage{enumerate}
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{epstopdf}
+\usepackage[printwatermark]{xwatermark}
+\usepackage{tikz}
+
+\providecommand{\sol}{\noindent \textbf{Solution: }}
+\providecommand{\points}[1]{\textcolor[rgb]{1, 1, 1}{.}\hfill{\textbf{[#1 points]} } \\ }
+\providecommand{\grader}[1]{\noindent \textcolor[rgb]{0.5, 0, 0}{\emph{Note to grader:}} #1}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Final review: CH5-8}
+%\author{Jeff Lai}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[Q 1.]
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+\item  In a sociology graduate's senior thesis, she conducts a study on the number of hours per day JHU students spent on studying. Data is collected from the Freshman, Sophomore, and Junior classes and is listed below.\\
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+Freshman (F)& Sophomore (S)& Junior (J)\\
+\hline
+3.0 & 4.5 & 6.0\\
+2.5 & 3.5 & 4.5 \\
+3.5 & 4.0 & 6.0 \\
+3.5 & 4.5 & 8.5 \\
+3.5 & 4.5 & 6.5 \\
+4.0 & 4.5 & 6.0 \\
+& &         6.5 \\           
+\hline \end{tabular}
+\end{center}
+Test the hypothesis that the means for all three groups are the same. Use $\alpha=0.05.$
+
+\vspace{35mm} 
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 2 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item We want to compare the number of seeds in strawberries and watermelons. Assume the populations are normally distributed. A sample of 13 strawberries had a sample variance of 64. A sample of 16 watermelons had a sample variance of 16. Test the null hypothesis at $\alpha = 0.10$ and find the full rejection region. 
+$$\text{H}_0: \; \sigma_s^2=\sigma_w^2$$
+$$\text{H}_A: \; \sigma_s^2 \neq \sigma_w^2$$
+
+\vspace{35mm}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 3 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item A study found that among a sample of 180 banana lovers, 43 of them ($\hat{p}_b$ =  0.2389) reported to be avid collectors. Among 175 interviewed pineapple lovers, 28 of them ($\hat{p}_p$ =  0.16) were avid collectors. Test the following at $\alpha = 0.05$. Find the $p$-value.
+$$\text{H}_0: \; p_b \leq p_p$$
+$$\text{H}_A: \; p_b > p_p$$
+	
+\vspace{35mm}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 4 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item A study measured the diameter of strawberries. Assume population is normally distributed. A sample of 30 strawberries had a sample variance of 0.09. Test the null hypothesis at $\alpha = 0.05$. 
+$$\text{H}_0: \; \sigma_0^2 \geq 0.14$$
+$$\text{H}_A: \; \sigma_a^2 < 0.14$$
+
+\vspace{35mm}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 5 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item A soda company states that the sugar content in their bottles is normally distributed. A sample of 36 soda bottles are tested for sugar content. It is found that this sample has an average of $\bar{x} = 69.2$ grams of sugar per bottle. Test the null hypothesis regarding the sugar contained in all soda bottles of this kind:
+$$\text{H}_0: \; \mu = 68$$
+
+Versus the alternative hypothesis:
+$$\text{H}_a: \; \mu \neq 68$$
+
+It is known that the population standard deviation, $\sigma = 3.6$ grams. Use $\alpha = 0.01$, and find the $p$-value.
+	
+\vspace{35mm}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 6 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item Assume that the life expectancy are normally distributed in countries A and B. We do not know the variance of life length, but we know that they are equal in these nations. Suppose that 15 death certificates are obtained in Country A have $\bar{x}_A = 64$ years with $s_A = 3$, while 12 certificates in Country B have $\bar{x}_B = 68$ years and $s_B = 2.5$. Test the null hypothesis regarding the difference in means:
+$$\text{H}_0: \; \mu_A - \mu_B = 0$$
+
+Versus the alternative hypothesis:
+$$\text{H}_a: \; \mu_A - \mu_B \neq 0$$
+
+Use $\alpha = 0.02$.
+	
+\vspace{35mm}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 7 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+The response of a new diabetic drug was measured for 20 patients at Johns Hopkins Hospital (group 1) and 15 control subjects (group 2). The sample variance for group 1 is $s_1^2 = 100$, and the sample variance for group 2 is $s_2^2 = 120$. Construct the 95 \% confidence interval for the population variances: $\frac{\sigma_1^2}{\sigma_2^2}$. 
+
+\vspace{35mm}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 8 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item Given a p-value of 0.001: 
+	\begin{enumerate}[(a)]
+	\item Find the range of $\alpha$ such that the null hypothesis can be rejected. 
+	\item Find the range of $\alpha$ such that the null hypothesis cannot be rejected.
+	\end{enumerate}
+	
+\vspace{35mm}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 9 %%%%%%%%%%%%%%%%%%%%%%%%%
+\item Consider a population quality of unknown distribution but with known $E(X) = \mu$ and $\var(X) = \sigma^2$. If we take a sample of size $n = 100$, is it true that: 
+\[ \frac{\overline{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim N(0,1)? \]
+Answer yes or no. If no, either give the correct distribution or state that it cannot be determined.\\
+
+\vspace{35mm}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 10 %%%%%%%%%%%%%%%%%%%%%%%%
+\item Consider a population quality of unknown distribution but with known $E(X) = \mu$ and $\var(X) = \sigma^2$. If we take a sample of size $n = 10$, is it true that: 
+\[ \frac{\overline{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim N(0,1)? \]
+Answer yes or no. If no, either give the correct distribution or state that it cannot be determined.\\
+
+\vspace{35mm}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 11 %%%%%%%%%%%%%%%%%%%%%%%%
+\item Now consider two different populations. We take one sample from each of sizes $n_1 = 16$ and $n_2 = 25$ to measure their heights in feet, and determine that the sample means $\bar{x}_1 = 6$ and $\bar{x}_2 = 5.5$, and the sample variances $s_1^2 = s_2^2 = 0.25$. Assume the population variances are equal.
+	\begin{enumerate}
+	\item Compute the 95 \% confidence interval for the difference of population mean heights.
+	\item Compute the 90 \% confidence interval for the difference of population mean heights.
+	\end{enumerate}
+
+\vspace{35mm}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 12 %%%%%%%%%%%%%%%%%%%%%%%%
+\item Let $X$ be a binomial distribution with $n=20$ and $p=0.25$. What is the probability that $X \geq 8$ ? Find the answer using a normal approximation with a continuity correction. 
+
+\vspace{35mm}
+%%%%%%%%%%%%%%%%%%%%%%%%% Question 13 %%%%%%%%%%%%%%%%%%%%%%%%
+\item Suppose 30\% of people in a population own dogs. Scientists drew a sample of size 50 from this population. Let $\hat{p}$ be the proportion of the sample who are dog owners. (You do not need to take into account continuity correction.)
+\begin{enumerate}[(a)]
+\item Find the mean of $\hat{p}$.
+\item Find the standard error of $\hat{p}$, i.e find $\sigma_{\hat{p}}$.
+\item What is the probability that $\hat{p} \geq 0.4$ ?
+\end{enumerate}
+
+\vspace{35mm}
+
+\end{enumerate} 
+\end{document}
